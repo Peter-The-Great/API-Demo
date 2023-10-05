@@ -1,9 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+namespace API_Demo.Data;
 using Microsoft.EntityFrameworkCore;
-using API_Demo.Models;
 
     public class SchoolContext : DbContext
     {

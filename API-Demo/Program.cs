@@ -1,6 +1,10 @@
+using API_Demo.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+
+//Here we create a builder for our application
 var builder = WebApplication.CreateBuilder(args);
+
+// We add a connection to our database using the connection string from appsettings.json if it doesn't exist we throw an exception
 builder.Services.AddDbContext<SchoolContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("SchoolContext") ?? throw new InvalidOperationException("Connection string 'SchoolContext' not found.")));
 
