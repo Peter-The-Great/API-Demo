@@ -1,12 +1,13 @@
 namespace API_Demo.Data;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-    public class SchoolContext : DbContext
-    {
+    public class SchoolContext : IdentityDbContext
+{
         public SchoolContext (DbContextOptions<SchoolContext> options)
             : base(options)
         {
         }
 
-        public DbSet<API_Demo.Models.Vak> Vak { get; set; } = default!;
+        public DbSet<Models.Vak> Vak { get; set; } = default!;
     }

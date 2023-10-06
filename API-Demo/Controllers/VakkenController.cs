@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API_Demo.Models;
 using API_Demo.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API_Demo.Controllers
 {
@@ -29,6 +30,7 @@ namespace API_Demo.Controllers
 
         // GET: api/Vakken/5
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<Vak>> GetVak(int id)
         {
           if (_context.Vak == null)
